@@ -8,13 +8,19 @@ import com.ex2.game_deals.main.AppMain
 import com.ex2.game_deals.ui.theme.GamedealsTheme
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             GamedealsTheme {
-               AppMain()
+                AppMain()
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+//        DealSDK.fetchItems()
     }
 }

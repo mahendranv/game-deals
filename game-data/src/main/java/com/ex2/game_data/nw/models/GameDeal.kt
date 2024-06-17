@@ -32,19 +32,19 @@ data class GameDeal(
     @SerialName("gameID") val gameID: String,
 
     /** Sale price of the game. */
-    @SerialName("salePrice") val salePrice: String,
+    @SerialName("salePrice") val salePrice: Float,
 
     /** Normal price of the game. */
-    @SerialName("normalPrice") val normalPrice: String,
+    @SerialName("normalPrice") val normalPrice: Float,
 
     /** Flag indicating if the game is on sale. */
     @SerialName("isOnSale") @Serializable(with = IntBooleanSerializer::class) val isOnSale: Boolean?,
 
     /** Savings percentage. */
-    @SerialName("savings") val savings: String,
+    @SerialName("savings") val savings: Float,
 
     /** Metacritic score. */
-    @SerialName("metacriticScore") val metacriticScore: String,
+    @SerialName("metacriticScore") val metacriticScore: Int,
 
     /** Steam rating text. */
     @SerialName("steamRatingText") val steamRatingText: String,
@@ -53,7 +53,7 @@ data class GameDeal(
     @SerialName("steamRatingPercent") val steamRatingPercent: String,
 
     /** Number of Steam ratings. */
-    @SerialName("steamRatingCount") val steamRatingCount: String,
+    @SerialName("steamRatingCount") val steamRatingCount: Int,
 
     /** Steam App ID. */
     @SerialName("steamAppID") val steamAppID: String,

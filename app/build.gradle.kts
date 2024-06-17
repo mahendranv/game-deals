@@ -49,6 +49,8 @@ android {
 
 dependencies {
 
+    implementation(project(":game-data"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -71,5 +73,10 @@ dependencies {
 
     // https://mvnrepository.com/artifact/androidx.compose.material/material-icons-extended
     runtimeOnly(libs.androidx.material.icons.extended)
+
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
+    implementation(libs.koin.compose)
 
 }
