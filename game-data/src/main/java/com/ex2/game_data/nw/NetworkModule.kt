@@ -12,7 +12,7 @@ import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 import org.koin.dsl.module
 
-internal val provideHttpClientModule = module {
+internal val networkModule = module {
     single<HttpClient> {
         HttpClient(CIO) {
             install(Logging) {

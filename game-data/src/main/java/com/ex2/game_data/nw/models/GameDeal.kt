@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  * Data class representing a game deal.
  */
 @Serializable
-data class GameDeal(
+internal data class GameDeal(
 
     /** Internal name of the game. */
     @SerialName("internalName") val internalName: String,

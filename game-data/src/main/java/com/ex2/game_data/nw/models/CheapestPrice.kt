@@ -7,7 +7,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class CheapestPrice(
+internal data class CheapestPrice(
 
     @SerialName("date") @Serializable(with = LocalDateTimeSerializer::class)
     val date: LocalDateTime,

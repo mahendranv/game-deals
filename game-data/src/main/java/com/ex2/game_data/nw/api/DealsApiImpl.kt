@@ -7,7 +7,7 @@ import io.ktor.client.call.body
 import io.ktor.client.request.get
 import io.ktor.http.HttpStatusCode
 
-class DealsApiImpl(
+internal class DealsApiImpl(
     private val httpClient: HttpClient
 ) : DealsApi {
 

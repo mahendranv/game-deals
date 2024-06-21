@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.ExplicitApiMode
+
 plugins {
     id("java-library")
     alias(libs.plugins.jetbrains.kotlin.jvm)
@@ -7,6 +9,11 @@ plugins {
 java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
+}
+
+kotlin {
+    explicitApi()
+    explicitApi = ExplicitApiMode.Strict
 }
 
 dependencies {
@@ -20,6 +27,9 @@ dependencies {
     implementation(libs.ktor.client.content.negotiation)
     implementation(libs.ktor.serialization.kotlinx.json)
     implementation(libs.ktor.client.logging)
+
+//    implementation(platform(libs.kotlin.faker.bom))
+//    implementation(libs.kotlin.faker)
 
     testImplementation(libs.ktor.client.mock)
     testImplementation(libs.junit)

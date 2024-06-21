@@ -6,6 +6,7 @@ coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
+kotlinFakerBom = "2.0.0-rc.4"
 kotlinxDatetime = "0.6.0"
 kotlinxSerialization = "2.0.0"
 kotlinxSerializationJson = "1.6.3"
@@ -44,6 +45,8 @@ koin-android = { module = "io.insert-koin:koin-android" }
 koin-core = { module = "io.insert-koin:koin-core" }
 koin-compose = { module = "io.insert-koin:koin-androidx-compose"}
 
+kotlin-faker = { module = "io.github.serpro69:kotlin-faker" }
+kotlin-faker-bom = { module = "io.github.serpro69:kotlin-faker-bom", version.ref = "kotlinFakerBom" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 

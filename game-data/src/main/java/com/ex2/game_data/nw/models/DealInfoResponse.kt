@@ -5,7 +5,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class DealInfoResponse(
+internal data class DealInfoResponse(
     @SerialName("cheaperStores")
     val cheaperStores: List<CheaperStore>,
     @SerialName("cheapestPrice")

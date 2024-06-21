@@ -2,7 +2,7 @@ package com.ex2.game_data.domain.models
 
 import kotlinx.datetime.LocalDateTime
 
-data class Deal(
+public data class Deal(
     val title: String,
     val thumbnail: String,
     val releasedOn: LocalDateTime,
@@ -13,5 +13,5 @@ data class Deal(
 
     val savings: Int,
     val salePrice: Float,
-    val normalProce: Float,
+    val normalPrice: Float,
 )

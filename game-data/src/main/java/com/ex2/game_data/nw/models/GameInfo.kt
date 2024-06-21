@@ -6,7 +6,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class GameInfo(
+internal data class GameInfo(
     @SerialName("gameID")
     val gameID: String,
     @SerialName("metacriticLink")

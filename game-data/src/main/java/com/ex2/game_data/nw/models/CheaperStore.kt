@@ -5,7 +5,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class CheaperStore(
+internal data class CheaperStore(
     @SerialName("dealID")
     val dealID: String,
     @SerialName("retailPrice")

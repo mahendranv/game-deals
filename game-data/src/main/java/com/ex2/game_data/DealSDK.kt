@@ -1,27 +1,31 @@
 package com.ex2.game_data
 
-import com.ex2.game_data.nw.api.DealsApi
-import com.ex2.game_data.nw.provideHttpClientModule
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import com.ex2.game_data.domain.models.Deal
+import com.ex2.game_data.nw.networkModule
+import com.ex2.game_data.repo.DealsRepo
+import com.ex2.game_data.repo.repoModule
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import org.koin.core.context.startKoin
 
-object DealSDK : KoinComponent {
+public object DealSDK : IDealSDK, KoinComponent {
 
-    private val dealsApi: DealsApi by inject()
+    private val dealsRepo: DealsRepo by inject()
 
-    fun initialize() {
+    internal var fakeMode: Boolean = false
+        private set
+
+    override fun initialize() {
         startKoin {
-            modules(provideHttpClientModule)
+            modules(networkModule, repoModule)
         }
     }
 
-    fun fetchItems() {
-        GlobalScope.launch {
-            val list = dealsApi.fetchDeals()
-            println("List = $list")
-        }
+    override fun enableFakeMode(enable: Boolean) {
+        fakeMode = enable
+    }
+
+    override suspend fun fetchDeals(page: Int): List<Deal> {
+        return dealsRepo.fetchDeals(page)
     }
 }

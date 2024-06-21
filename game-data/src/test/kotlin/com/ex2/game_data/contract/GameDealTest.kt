@@ -24,7 +24,7 @@ class GameDealTest {
         val data = DealsApiImpl(fakeClient).fetchDeal("dummy")
         assertNotNull(data)
     }
-    
+
     @Test
     fun `test fetch Deal Info non-OK response`() = runBlocking {
         val fakeClient: HttpClient =
