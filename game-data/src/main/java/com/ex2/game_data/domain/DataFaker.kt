@@ -46,14 +46,34 @@ internal object DataFaker {
         return "$one $two $three"
     }
 
+    val mockImages = arrayOf(
+        "https://picsum.photos/id/8/5000/3333",
+        "https://picsum.photos/id/9/5000/3269",
+        "https://picsum.photos/id/10/2500/1667",
+        "https://picsum.photos/id/11/2500/1667",
+        "https://picsum.photos/id/12/2500/1667",
+        "https://picsum.photos/id/13/2500/1667",
+        "https://picsum.photos/id/14/2500/1667",
+        "https://picsum.photos/id/15/2500/1667",
+        "https://picsum.photos/id/16/2500/1667",
+        "https://picsum.photos/id/17/2500/1667",
+        "https://picsum.photos/id/18/2500/1667",
+        "https://picsum.photos/id/19/2500/1667",
+        "https://picsum.photos/id/20/3670/2462",
+        "https://picsum.photos/id/21/3008/2008",
+        "https://picsum.photos/id/22/4434/3729",
+        "https://picsum.photos/id/23/3887/4899",
+        "https://picsum.photos/id/24/4855/1803",
+        "https://picsum.photos/id/25/5000/3333"
+    )
+
     fun generateDeals(n: Int) = List(n) {
         val normalPrice = random.nextInt(30, 100).toFloat()
         val savings = random.nextInt(1, 15)
 
-
         Deal(
             title = randomTitle(),
-            thumbnail = "https://www.cheapshark.com/img/logo_image.png?v=1.0",
+            thumbnail = mockImages.random(),
             releasedOn = randomDateTime(),
             updatedOn = randomDateTime(),
             onSale = random.nextBoolean(),

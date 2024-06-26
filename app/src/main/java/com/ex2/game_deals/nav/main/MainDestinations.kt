@@ -1,13 +1,13 @@
 package com.ex2.game_deals.nav.main
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.outlined.FavoriteBorder
-import androidx.compose.material.icons.outlined.Home
-import androidx.compose.material.icons.outlined.Person
 import androidx.compose.ui.graphics.vector.ImageVector
+import com.ex2.game_deals.common.icons.AppIcons
+import com.ex2.game_deals.common.icons.appicons.Bookmark
+import com.ex2.game_deals.common.icons.appicons.BookmarkFilled
+import com.ex2.game_deals.common.icons.appicons.CircleUserFilled
+import com.ex2.game_deals.common.icons.appicons.CircleUser
+import com.ex2.game_deals.common.icons.appicons.Home
+import com.ex2.game_deals.common.icons.appicons.HomeFilled
 
 sealed class MainDestination(
     val route: String,
@@ -19,21 +19,21 @@ sealed class MainDestination(
     data object Home : MainDestination(
         route = "home",
         label = "Home",
-        icon = Icons.Outlined.Home,
-        iconSelected = Icons.Filled.Home
+        icon = AppIcons.Home,
+        iconSelected = AppIcons.HomeFilled
     )
 
     data object Profile : MainDestination(
         route = "profile",
         label = "Profile",
-        icon = Icons.Outlined.Person,
-        iconSelected = Icons.Filled.Person
+        icon = AppIcons.CircleUser,
+        iconSelected = AppIcons.CircleUserFilled
     )
 
     data object Bookmarks : MainDestination(
         route = "bookmarks",
         label = "Bookmarks",
-        icon = Icons.Outlined.FavoriteBorder,
-        iconSelected = Icons.Filled.Favorite
+        icon = AppIcons.Bookmark,
+        iconSelected = AppIcons.BookmarkFilled
     )
 }

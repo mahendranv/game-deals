@@ -1,6 +1,12 @@
 package com.ex2.game_deals.main
 
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -9,6 +15,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
@@ -42,7 +50,12 @@ fun AppMain() {
 
 @Composable
 private fun AppBottomNavBar(navController: NavHostController) {
-    NavigationBar {
+    val insets = WindowInsets.navigationBars.asPaddingValues()
+    NavigationBar(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(insets.calculateBottomPadding() + 68.dp)
+    ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentDestination = navBackStackEntry?.destination
         mainNavItems.forEach { dest ->
@@ -59,14 +72,16 @@ private fun AppBottomNavBar(navController: NavHostController) {
                     }
                 },
                 label = {
-                    Text(text = dest.label)
+                    Text(text = dest.label, fontSize = 10.sp)
                 },
                 icon = {
                     Icon(
                         imageVector = if (selected) dest.iconSelected else dest.icon,
-                        contentDescription = null
+                        contentDescription = null,
+                        modifier = Modifier.size(20.dp)
                     )
                 },
+                modifier = Modifier.height(20.dp)
             )
         }
     }
